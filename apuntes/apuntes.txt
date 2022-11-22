@@ -1,0 +1,49 @@
+    <Tweet name="dev ed" text="description" likes="30" />
+     <Tweet name="Wayne" text="i am a web dev" likes="200" />
+     <Tweet name="winter is coming" text="winter is cold" likes="20" />
+
+function Tweet({name,text,likes}){
+    return(
+        <div className="tweet">
+            <h3>{name}</h3>
+            <p>{text}</p>
+            <h3>{likes} likes</h3>
+        </div>
+    )
+}
+
+recuerda las clases de destructuracion que hemos visto hasta ahora, lo hicimos aqui fue asignarles propiedades a los elementos jsx y se los pasamos 
+a la function Tweet y destructuramos su info y lo renderizamos en las etiquetas html para que se muestre en el navegador
+
+const [isRed, setRed] = useState(false) /* si no me equivoco el useState es mas como si fuera una variable que se utilizara lugo */
+  const [count, setCount] = useState(0)
+
+  const increment = () =>{
+    setCount(count + 1)
+  }
+
+  const Decrement = () =>{
+    if(count<=0){
+      return
+    }else{
+      setCount(count - 1)
+    }
+  }
+
+  const setRedColor = () =>{
+    setRed(!isRed) /* el valor que este dentro de el signo de exclamacion sera el valor opuesto a el, ejemplo, si true se convertira en false y vice versa :D */
+  }
+
+
+
+  return (
+   <div className='container'>
+     <h1 className= {isRed ? "red" : ""}>Change My color :D</h1>
+     <button onClick={setRedColor}>Change Color</button>
+
+     <button onClick={increment}>Icrement</button>
+     <button onClick={Decrement}>Decrement</button>
+     <h1>{count}</h1>
+
+
+   </div>
